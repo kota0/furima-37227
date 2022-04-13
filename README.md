@@ -27,9 +27,9 @@
 | situation_id | integer | null: false |
 | pay_for_id | integer | null: false |
 | area_id | integer | null: false |
-| shipping_date_id | integer | null: false|
+| shipping_date_id | integer | null: false |
 | price | integer | null: false |
-| description_of_item | text |
+| description_of_item | text | null: false |
 | user | references | null: false,foreign_key: true |
 
 ### Association
@@ -43,20 +43,19 @@
 | user | references | null: false ,foreign_key: true |
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 - belongs_to :item
 - has_one :shipping_address
 
-## shipping_addressテーブル
+## shipping_addressesテーブル
 |Column | Type | Options |
 | --- | --- | --- |
 | postal_code | string | null: false |
-| prefectures | integer | null: false |
-| items | references | null: false,foreign_key: true |
 | address | string | null: false |
+| city  string |  null: false |
 | building | string |
 | telephone_number | string | null: false |
-| buys | references | null: false,foreign_key: true |
+| buy | references | null: false,foreign_key: true |
 
 ### Association
 - belongs_to :buy
