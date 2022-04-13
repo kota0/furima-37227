@@ -29,6 +29,7 @@
 | area_id | integer | null: false |
 | shipping_date_id | integer | null: false|
 | price | integer | null: false |
+| description_of_item | text |
 | user | references | null: false,foreign_key: true |
 
 ### Association
@@ -44,6 +45,7 @@
 ### Association
 - belongs_to :users
 - belongs_to :item
+- has_one :shipping_address
 
 ## shipping_addressテーブル
 |Column | Type | Options |
