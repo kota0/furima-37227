@@ -52,7 +52,8 @@
 | --- | --- | --- |
 | postal_code | string | null: false |
 | address | string | null: false |
-| city  string |  null: false |
+| area_id | integer | null: false |
+| city | string | null: false |
 | building | string |
 | telephone_number | string | null: false |
 | buy | references | null: false,foreign_key: true |
