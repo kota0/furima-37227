@@ -21,10 +21,5 @@ class User < ApplicationRecord
    end
 
    validates :birthday, presence: true
-
-
-  #  validates :last_name_kana, format:{ with: /\A[\p{katakana}\p{blank}ーー]+\z/, message: 'はカタカナで入力して下さい。'}, presence: true
-  #  validates :first_name_kana, format:{ with: /\A[\p{katakana}\p{blank}ーー]+\z/, message: 'はカタカナで入力して下さい。'}, presence: true
-  
-
- end
+   
+end
