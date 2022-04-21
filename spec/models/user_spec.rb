@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
+
     before do
      @user = FactoryBot.build(:user)
     end
@@ -99,7 +99,7 @@ RSpec.describe User, type: :model do
       end
 
       it '名前は全角（漢字・ひらがな・カタカナ）でないと登録できない' do
-        @user.last_name = ''
+        @user.last_name = '111'
         @user.valid?
         expect(@user.errors.full_messages).to include("Last name 全角文字を使用してください")
       end
