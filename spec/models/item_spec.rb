@@ -1,19 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Item, type: :model do
-
-
   before do
     @item = FactoryBot.build(:item)
   end
 
- describe '商品出品機能' do
+  describe '商品出品機能' do
     context '商品出品ができる時' do
     end
 
-
     context '商品出品ができない時' do
-
       it '商品名が空では登録できない' do
         @item.product_name = ''
         @item.valid?
@@ -37,55 +33,54 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
-      
+
       it 'situation_idが1では登録できない' do
         @item.situation_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Situation can't be blank")
       end
-      
+
       it 'pay_for_idが1では登録できない' do
         @item.pay_for_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Pay for can't be blank")
       end
 
-      it 'shipping_data_idが1では登録できない'do
-      @item.pay_for_id = 1
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Pay for can't be blank")
+      it 'shipping_data_idが1では登録できない' do
+        @item.pay_for_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Pay for can't be blank")
       end
 
       it 'area_idが1では登録できない' do
-      @item.area_id = 1
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Area can't be blank")
+        @item.area_id = 1
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Area can't be blank")
       end
 
       it 'priceが空では登録できない' do
-      @item.price = ' '
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Price is invalid")
+        @item.price = ' '
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'priceが半角でないと登録できない' do
-      @item.price = '３００'
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Price is invalid")
+        @item.price = '３００'
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'priceが300円未満では出品できない' do
-      @item.price = 299
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Price is invalid")
+        @item.price = 299
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
 
       it 'priceが9999999円を超えると登録できない' do
-      @item.price = 99999999
-      @item.valid?
-      expect(@item.errors.full_messages).to include("Price is invalid")
+        @item.price = 99_999_999
+        @item.valid?
+        expect(@item.errors.full_messages).to include('Price is invalid')
       end
-
     end
   end
 end
