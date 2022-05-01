@@ -41,7 +41,9 @@ ActiveRecord::Schema.define(version: 2022_04_21_100723) do
     t.integer "situation_id", null: false
     t.integer "pay_for_id", null: false
     t.integer "area_id", null: false
-    t.integer "shipping_date_id", null: false
+    t.integer "shipping_data_id", null: false
+    t.integer "price", null: false
+    t.text "description_of_item", null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_items_on_user_id"
   end
