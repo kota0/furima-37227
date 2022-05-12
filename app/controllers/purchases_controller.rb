@@ -1,5 +1,7 @@
 class PurchasesController < ApplicationController
-
+  before_action :authenticate_user!, only: [:index]
+ 
+ 
   def new
   end
 
@@ -37,6 +39,4 @@ class PurchasesController < ApplicationController
       currency: 'jpy'                 # 通貨の種類（日本円）
     )
   end
-
-  
 end
