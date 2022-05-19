@@ -30,7 +30,7 @@ class PurchasesController < ApplicationController
   end
 
   def pay_item
-    Payjp.api_key =ENV'sk_test_345cb7433b5fbd599cc8e719'
+    Payjp.api_key =ENV'sk_live_a49ebe6bee60f7888bfeb871828efbcc59f74c0074920385de548594'
     Payjp::Charge.create(
       amount: @item.price,  # 商品の値段
       card: purchase_params[:token],    # カードトークン
