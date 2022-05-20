@@ -30,13 +30,7 @@ class PurchasesController < ApplicationController
   end
 
   def pay_item
-<<<<<<< HEAD
-
     Payjp.api_key =ENV["PAYJP_SECRET_KEY"]
-
-=======
-    Payjp.api_key =ENV'sk_test_345cb7433b5fbd599cc8e719'
->>>>>>> parent of 7695786 (テストキーから本番へ変更)
     Payjp::Charge.create(
       amount: @item.price,  # 商品の値段
       card: purchase_params[:token],    # カードトークン

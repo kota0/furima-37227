@@ -1,12 +1,6 @@
 const pay = () => {
-
-<<<<<<< HEAD
   Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
 
-
-=======
-  Payjp.setPublicKey(ENV'pk_test_0c2dffe1aaf42c09925bb12e');
->>>>>>> parent of 7695786 (テストキーから本番へ変更)
   const submit = document.getElementById("button");
   submit.addEventListener("click", (e) => {
     e.preventDefault();
